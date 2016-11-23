@@ -1,0 +1,10 @@
+/out
+/out/*
+.cmdenv-log
+.cproject
+.oppbuildspec
+.project
+.tkenvlog
+.tkenvrc
+MakeFile
+seminarska1.exe
