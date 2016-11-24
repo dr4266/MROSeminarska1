@@ -70,6 +70,8 @@ void mmcQueue::handleMessage(cMessage *msg)
 		}
 		job->setKind(0);
 		send(job, "out");
+		EV << "MMC: Cas strezbe: " << simTime() - job->getTimestamp() << " s, prioriteta: " << job->getSchedulingPriority() << "\n";
+
 
 		if (!queue.empty())
         {
@@ -80,7 +82,8 @@ void mmcQueue::handleMessage(cMessage *msg)
         	    serviceTime = job->getSchedulingPriority();
         	}
         	scheduleAt( simTime()+serviceTime, job );	// v izvajanje damo novo opravilo, ki se bo izvedlo cez serviceTime casa
-        	EV << "Cakalni cas:" << simTime() - job->getTimestamp() << " s";
+        	EV << "MMC: Cakalni cas:" << simTime() - job->getTimestamp() << " s";
+        	job->setTimestamp(); // Za merjenje dolzine strezbe
         	processing++;
         	length--;
         }

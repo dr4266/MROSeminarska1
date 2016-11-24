@@ -19,6 +19,7 @@ public:
 	mm1Queue();
 	virtual ~mm1Queue();
 	int getLength();
+	int getCapacity();
 
 protected:
     virtual void initialize();

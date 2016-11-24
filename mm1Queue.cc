@@ -35,7 +35,8 @@ void mm1Queue::handleMessage(cMessage *msg)
 	if (msg==endServiceMsg)
 	    {
 		    send(currentJob, "out");	// trenutno opravilo je obdelano, zato ga posljemo skozi izhodna vrata naprej v omrezje
-	        EV << "Cas strezbe: " << simTime() - currentJob->getTimestamp() << " s\n";
+		    // Timestamp nastavlen na takrat ko ga dodamo v vrsto, torej cakanje+strezba
+	        //EV << "MM1: Cas strezbe: " << simTime() - currentJob->getTimestamp() << " s, prioriteta: " << currentJob->getSchedulingPriority() << "\n";
 		    if (queue.isEmpty())			// ce je cakalna vrsta prazna, potem v izvajanje ne moremo vzeti nobenega opravila
 	        {
 	        	currentJob = NULL;
@@ -51,7 +52,8 @@ void mm1Queue::handleMessage(cMessage *msg)
 
 	        	scheduleAt( simTime()+serviceTime, endServiceMsg );
 
-	        	EV << "Cakalni cas:" << simTime() - currentJob->getTimestamp() << " s, prioriteta: " << currentJob->getSchedulingPriority();		// v konzolo izpisemo cas, ki ga je opravilo prezivelo v cakalni vrsti
+	        	//EV << "Cakalni cas:" << simTime() - currentJob->getTimestamp() << " s";		// v konzolo izpisemo cas, ki ga je opravilo prezivelo v cakalni vrsti
+	        	currentJob->setTimestamp();    // za merjenje dolzine strezbe
 	        	length--;				// cakalna vrsta se je skrajsala za 1
 	        }
 	    }
@@ -96,7 +98,12 @@ void mm1Queue::updateDisplay(int i)
     getDisplayString().setTagArg("t",0,buf);
 }
 
-//Return the length of queue
+//Return the length of the queue
 int mm1Queue::getLength() {
     return this->length;
+}
+
+// Return the capacity of the queue
+int mm1Queue::getCapacity() {
+    return this->capacity;
 }
