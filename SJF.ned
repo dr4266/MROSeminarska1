@@ -35,23 +35,23 @@ network SJF
         MM13: mm1Queue {
             @display("p=333,297");
         }
-        switch: Switch {
+        switch1: Switch {
             @display("p=224,184");
         }
-        switch1: Switch {
+        switch2: Switch {
             @display("p=448,183");
         }
         MMC: mmcQueue {
             @display("p=583,184");
         }
     connections:
-        switch.out++ --> MM11.in++;
-        switch.out++ --> MM12.in++;
-        switch.out++ --> MM13.in++;
-        source.out --> switch.in++;
-        MM12.out --> switch1.in++;
-        MM11.out --> switch1.in++;
-        MM13.out --> switch1.in++;
-        switch1.out++ --> MMC.in++;
+        switch1.out++ --> MM11.in++;
+        switch1.out++ --> MM12.in++;
+        switch1.out++ --> MM13.in++;
+        source.out --> switch1.in++;
+        MM12.out --> switch2.in++;
+        MM11.out --> switch2.in++;
+        MM13.out --> switch2.in++;
+        switch2.out++ --> MMC.in++;
         MMC.out --> sink.in++;
 }

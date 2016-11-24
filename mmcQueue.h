@@ -15,6 +15,7 @@ private:
 	int resources;
 	int processing;
 	simtime_t serviceTime;
+	int primer;
 
 	typedef std::list<cMessage *> jobsProcessingList;
 	jobsProcessingList jobsProcessing;

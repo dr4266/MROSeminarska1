@@ -9,6 +9,7 @@ class Switch : public cSimpleModule
 {
   private:
     int numGates;
+    int switchMode;
 
   protected:
     virtual void initialize() override;

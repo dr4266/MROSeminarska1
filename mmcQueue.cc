@@ -1,5 +1,4 @@
 #include "mmcQueue.h"
-#define primer_a 1
 
 // staticna primerjalna funkcija
 static int compare(cMessage* a, cMessage* b) {
@@ -8,7 +7,7 @@ static int compare(cMessage* a, cMessage* b) {
     int priority1 = job1->getSchedulingPriority();
     int priority2 = job2->getSchedulingPriority();
 
-    if  (priority1<priority2) {
+    if  (priority1>priority2) {
         return 1;
     } else if (priority1 == priority2) {
         return 0;
@@ -39,6 +38,7 @@ void mmcQueue::initialize()
 {
     capacity = par("capacity");
     serviceTime = par("serviceTime");
+    primer = par("primer");
 
     this->compareMSG = (CompareFunc) compare;
     queue.setup( compareMSG );
@@ -78,7 +78,7 @@ void mmcQueue::handleMessage(cMessage *msg)
         	job = check_and_cast<cMessage *>(queue.pop());
         	job->setKind(10);
         	jobsProcessing.push_back(job);
-        	if (primer_a) {
+        	if (primer == 0) {
         	    serviceTime = job->getSchedulingPriority();
         	}
         	scheduleAt( simTime()+serviceTime, job );	// v izvajanje damo novo opravilo, ki se bo izvedlo cez serviceTime casa
@@ -98,9 +98,10 @@ void mmcQueue::handleMessage(cMessage *msg)
     		processing ++;
     		job->setKind(10);
     		jobsProcessing.push_back(job);
-    		if (primer_a) {
+    		if (primer == 0) {
     		    serviceTime = job->getSchedulingPriority();
     		}
+    		job->setTimestamp();
     		scheduleAt( simTime()+serviceTime, job );
         }
     	else

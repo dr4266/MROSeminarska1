@@ -14,6 +14,7 @@ private:
     cMessage *endServiceMsg;		// sporocilo, ki ga modul posilja samemu sebi
 	int capacity, length;			// capacity = kapaciteta cakalne vrste (parameter), length = trenutna dolzina cakalne vrste
 	simtime_t serviceTime;			// cas procesiranja (parameter)
+	int primer;
 
 public:
 	mm1Queue();

@@ -22,6 +22,7 @@ void mm1Queue::initialize()
     serviceTime = par("serviceTime");		// cas procesiranje
     queue.setName("queue");					// opcijsko lahko cakalni vrsti dolocimo ime
     length = 0;								// na zacetku je cakalna vrsta prazna
+    primer = par("primer");
 }
 
 
@@ -46,7 +47,7 @@ void mm1Queue::handleMessage(cMessage *msg)
 	        	currentJob = check_and_cast<cMessage *>(queue.pop());	// v spremenljivko currentJob shranimo trenutno opravilo
 	        	// modul poslje sporocilo samemu sebi, ki ga bo obvestilo, da je izvajanja opravila konec
 	        	// sporocilo bo prispelo cez cas, ki je dolocen s parametrom serviceTime
-	        	if (primer_a) {
+	        	if (primer == 0) {
 	        	    serviceTime = currentJob->getSchedulingPriority();
 	        	}
 
@@ -65,7 +66,7 @@ void mm1Queue::handleMessage(cMessage *msg)
 	    	// v primeru, da v obdelavi trenutno ni nobenega opravila, lahko zacnemo s procesiranja prispelega opravila
 	    	if (currentJob == NULL)
 	        {
-	    	    if (primer_a) {
+	    	    if (primer == 0) {
 	    	        serviceTime = job->getSchedulingPriority();
 	    	    }
 	        	scheduleAt( simTime()+serviceTime, endServiceMsg ); // modul poslje sporocilo samemu sebi, ki ga bo obvestilo, da je izvajanja opravila konec

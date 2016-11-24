@@ -22,6 +22,7 @@ simple mm1Queue
 
         int capacity = default(100);
         volatile double serviceTime @unit(s) = 0.8s;
+        int primer = default(0);
 
     gates:
         input in[];

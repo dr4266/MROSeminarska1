@@ -25,7 +25,7 @@ simple mySource
         double stdev @unit(s) = default(mean/2);
         volatile double interArrivalTime @unit(s) = default(truncnormal(mean, stdev)); // time between generated jobs
         double startTime @unit(s) = default(10 s); // when the module sends out the first job
-        double stopTime @unit(s) = default(3600s); // when the module stops the job generation (-1 means no limit)
+        double stopTime @unit(s) = default(50000s); // when the module stops the job generation (-1 means no limit)
  
         
     gates:

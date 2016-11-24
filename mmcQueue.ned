@@ -9,8 +9,9 @@ simple mmcQueue
         
         int capacity = default(100);   
         int resources = default(2);
-        double mean @unit(s) = default(uniform(1s, 2s));
-        double stdev @unit(s) = default((mean/2));
+        int primer = default(0);
+        volatile double mean @unit(s) = default(uniform(1s, 2s));
+        volatile double stdev @unit(s) = default((mean/2));
         volatile double serviceTime @unit(s) = default(truncnormal(mean, stdev));
       
     gates:
