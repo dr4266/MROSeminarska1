@@ -15,6 +15,9 @@ private:
 	int resources;
 	int processing;
 	simtime_t serviceTime;
+	// statistics
+	simsignal_t droppedSignal;
+	simsignal_t waitTimeSignal;
 	int primer;
 
 	typedef std::list<cMessage *> jobsProcessingList;

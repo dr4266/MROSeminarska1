@@ -8,3 +8,6 @@
 .tkenvrc
 MakeFile
 seminarska1.exe
+/results
+/results/*
+*.anf

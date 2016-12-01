@@ -40,6 +40,10 @@ void mmcQueue::initialize()
     serviceTime = par("serviceTime");
     primer = par("primer");
 
+    droppedSignal = registerSignal("dropped");
+    waitTimeSignal = registerSignal("waitTime");
+
+
     this->compareMSG = (CompareFunc) compare;
     queue.setup( compareMSG );
 
@@ -48,6 +52,9 @@ void mmcQueue::initialize()
     resources = par("resources");
     processing = 0;
     jobsProcessing.clear();
+    //send out some signals
+    emit(droppedSignal, 0);
+    emit(waitTimeSignal, (simtime_t)0);
 }
 
 void mmcQueue::handleMessage(cMessage *msg)
@@ -82,7 +89,9 @@ void mmcQueue::handleMessage(cMessage *msg)
         	    serviceTime = job->getSchedulingPriority();
         	}
         	scheduleAt( simTime()+serviceTime, job );	// v izvajanje damo novo opravilo, ki se bo izvedlo cez serviceTime casa
+        	emit(waitTimeSignal, simTime() - job->getTimestamp()); // emit a wait time signal
         	EV << "MMC: Cakalni cas:" << simTime() - job->getTimestamp() << " s";
+
         	job->setTimestamp(); // Za merjenje dolzine strezbe
         	processing++;
         	length--;
@@ -101,6 +110,7 @@ void mmcQueue::handleMessage(cMessage *msg)
     		if (primer == 0) {
     		    serviceTime = job->getSchedulingPriority();
     		}
+    		emit(waitTimeSignal,(simtime_t)0); // Free resources, no waiting for the new msg
     		job->setTimestamp();
     		scheduleAt( simTime()+serviceTime, job );
         }
@@ -111,6 +121,7 @@ void mmcQueue::handleMessage(cMessage *msg)
                 // cakalna vrsta je presegla svojo kapaciteto
 	            delete job;
 	            EV << "Brisem sporocilo";
+	            emit(droppedSignal, 1);
 	        }
 	        else
 	        {
