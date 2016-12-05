@@ -42,6 +42,16 @@ void mmcQueue::initialize()
 
     droppedSignal = registerSignal("dropped");
     waitTimeSignal = registerSignal("waitTime");
+    job1Signal = registerSignal("job1");
+    job2Signal = registerSignal("job2");
+    job3Signal = registerSignal("job3");
+    job4Signal = registerSignal("job4");
+    job5Signal = registerSignal("job5");
+    job6Signal = registerSignal("job6");
+    job7Signal = registerSignal("job7");
+    job8Signal = registerSignal("job8");
+    job9Signal = registerSignal("job9");
+    job10Signal = registerSignal("job10");
 
 
     this->compareMSG = (CompareFunc) compare;
@@ -90,6 +100,28 @@ void mmcQueue::handleMessage(cMessage *msg)
         	}
         	scheduleAt( simTime()+serviceTime, job );	// v izvajanje damo novo opravilo, ki se bo izvedlo cez serviceTime casa
         	emit(waitTimeSignal, simTime() - job->getTimestamp()); // emit a wait time signal
+        	switch (job->getSchedulingPriority()) {
+        	    case 1:
+        	        emit(job1Signal, simTime() - job->getTimestamp());
+        	    case 2:
+        	        emit(job2Signal, simTime() - job->getTimestamp());
+        	    case 3:
+        	        emit(job3Signal, simTime() - job->getTimestamp());
+        	    case 4:
+        	        emit(job4Signal, simTime() - job->getTimestamp());
+        	    case 5:
+        	        emit(job5Signal, simTime() - job->getTimestamp());
+        	    case 6:
+        	        emit(job6Signal, simTime() - job->getTimestamp());
+        	    case 7:
+        	        emit(job7Signal, simTime() - job->getTimestamp());
+        	    case 8:
+        	        emit(job8Signal, simTime() - job->getTimestamp());
+        	    case 9:
+        	        emit(job9Signal, simTime() - job->getTimestamp());
+        	    case 10:
+        	        emit(job10Signal, simTime() - job->getTimestamp());
+        	}
         	EV << "MMC: Cakalni cas:" << simTime() - job->getTimestamp() << " s";
 
         	job->setTimestamp(); // Za merjenje dolzine strezbe

@@ -11,3 +11,4 @@ seminarska1.exe
 /results
 /results/*
 *.anf
+/.computed/
