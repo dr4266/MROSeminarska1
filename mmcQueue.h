@@ -29,6 +29,17 @@ private:
 	simsignal_t job8Signal;
 	simsignal_t job9Signal;
 	simsignal_t job10Signal;
+	simsignal_t dropped1;
+	simsignal_t dropped2;
+	simsignal_t dropped3;
+	simsignal_t dropped4;
+	simsignal_t dropped5;
+	simsignal_t dropped6;
+	simsignal_t dropped7;
+	simsignal_t dropped8;
+	simsignal_t dropped9;
+	simsignal_t dropped10;
+
 	int primer;
 
 	typedef std::list<cMessage *> jobsProcessingList;

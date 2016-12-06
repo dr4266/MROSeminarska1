@@ -23,19 +23,40 @@ simple mmcQueue
         @signal[job8] (type=simtime_t);
         @signal[job9] (type=simtime_t);
         @signal[job10] (type=simtime_t);
+       	@signal[dropped1](type=long);
+        @signal[dropped2](type=long);
+        @signal[dropped3](type=long);
+        @signal[dropped4](type=long);
+        @signal[dropped5](type=long);
+        @signal[dropped6](type=long);
+        @signal[dropped7](type=long);
+        @signal[dropped8](type=long);
+        @signal[dropped9](type=long);
+        @signal[dropped10](type=long);
         
         @statistic[dropped](title="drop event";record=vector,count;interpolationmode=none);
+        @statistic[dropped1](title="drop event; job 1";record=vector,count;interpolationmode=none);
+        @statistic[dropped2](title="drop event; job 2";record=vector,count;interpolationmode=none);
+        @statistic[dropped3](title="drop event; job 3";record=vector,count;interpolationmode=none);
+        @statistic[dropped4](title="drop event; job 4";record=vector,count;interpolationmode=none);
+        @statistic[dropped5](title="drop event; job 5";record=vector,count;interpolationmode=none);
+        @statistic[dropped6](title="drop event; job 6";record=vector,count;interpolationmode=none);
+        @statistic[dropped7](title="drop event; job 7";record=vector,count;interpolationmode=none);
+        @statistic[dropped8](title="drop event; job 8";record=vector,count;interpolationmode=none);
+        @statistic[dropped9](title="drop event; job 9";record=vector,count;interpolationmode=none);
+        @statistic[dropped10](title="drop event; job 10";record=vector,count;interpolationmode=none);
+        
         @statistic[waitTime](title="queueing time at dequeue";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job1](title="queueing time at dequeue for job with priority 1";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job2](title="queueing time at dequeue for job with priority 2";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job3](title="queueing time at dequeue for job with priority 3";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job4](title="queueing time at dequeue for job with priority 4";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job5](title="queueing time at dequeue for job with priority 5";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job6](title="queueing time at dequeue for job with priority 6";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job7](title="queueing time at dequeue for job with priority 7";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job8](title="queueing time at dequeue for job with priority 8";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job9](title="queueing time at dequeue for job with priority 9";record=vector,mean,max;unit=s;interpolationmode=none);
-        @statistic[job10](title="queueing time at dequeue for job with priority 10";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job1](title="time in queue; job priority 1";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job2](title="time in queue; job priority 2";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job3](title="time in queue; job priority 3";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job4](title="time in queue; job priority 4";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job5](title="time in queue; job priority 5";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job6](title="time in queue; job priority 6";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job7](title="time in queue; job priority 7";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job8](title="time in queue; job priority 8";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job9](title="time in queue; job priority 9";record=vector,mean,max;unit=s;interpolationmode=none);
+        @statistic[job10](title="time in queue; job priority 10";record=vector,mean,max;unit=s;interpolationmode=none);
  
         
         volatile double mean @unit(s) = default(uniform(1s, 2s));

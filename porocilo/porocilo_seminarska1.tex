@@ -115,10 +115,46 @@ Ob inicializaciji določimo kapaciteto vrste, število paketov v vsrti, ki je en
 Spet preverimo ali je prišlo novo sporočilo in če je katera od procesni enot prosta. V tem primeru vzamemo naslednji paket glede na način v katerem deluje M/M/c, torej ali po prioriteti ali pa naslednjega v vrsti. Če pa so vse procesne enote zasedene postaimo paket v vrsto, če je v njej še prostor. V nasprotnem primeru pa paketek zavržemo.
 
 \section{Simulacije in rezultati}
-Podroben opis simulacijskega algoritma, rezultati in pregled grafov performančne analize.
+Najprej sva simulirala primer, kjer gre za normalno delovanje in ne prihaja do nasičenj. Dolžina vrste MMCja je bila 100, hitrost porajanja paketkov pa je bila normalno porazdeljena med 1 in 2 sekundama. Število procesnih enot pa je enako 3. Pri tej simulaciji se v vrsti MMCja ni izgubil noben paketek porazdelitev čakanja v čakalni vrsti glede na prioriteto pa je vidna na spodnji sliki.\\
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{queue100.png}
+\caption{porazdelitev čakanja v vrsti glede na prioriteto paketa, merjeno v sekundah}
+\label{Slika2}
+\end{center}
+\end{figure}
+\\
+Nato sva simulirala primer nasičenega omrežja. Kjer sva pustila vse parametre nespremenjene, samo čakalno vrsto sva zmanjšala na 3. Sedaj se je veliko paketkov izgubilo, se je pa pričakovano zmanjšal povprečni čakalni čas bivanja paketka v vrsti.\\
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{dropped-queue3.png}
+\caption{porazdelitev števila izgubljanih paketov glede na njegovo prioriteto}
+\label{Slika2}
+\end{center}
+\end{figure}
+\\
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{queue3.png}
+\caption{porazdelitev čakanja v vrsti glede na prioriteto paketa, merjeno v sekundah}
+\label{Slika2}
+\end{center}
+\end{figure}
+\\
+\\
+Sledil je še poskus, kaj se zgodi če zmanjšava čas porajanja paketov na normalno porazdelitev med 0.1s in 0.2s. Vendar so rezultati in grafi ostali nespremenjeni. Torej čas porajanja zahtevko ne vpliva na čakalni čas in izgubljanje paketov.\\
+Za zadnjo simulacijo sva spremanila še število procesnih enot na 5, dolžina čakalne vrste je bila 3, čas porajanja paketkov pa normalno porazdeljen med 1s in 2s. Tu se paketki skoraj niso izgubljali, največ se jih je izgubilo paketkov s prioriteto 10 in to povprečno 7. Prav tako pa se je zelo znižal čas bivanja paketkov v čakalni vrsti.\\
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{queueu3-resource5.png}
+\caption{porazdelitev čakanja v vrsti glede na prioriteto paketa, merjeno v sekundah}
+\label{Slika2}
+\end{center}
+\end{figure}
+
 
 \section{Zaključek}
-Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri samem opisu rešitve se običajno sklicujemo na reference, npr. \cite{omnetpp} in \cite{cisco}. 
+Ugotovila sva, da na čas bivanja paketkov v čakalni vrsti in številu paketkov, ki se zavržejo najbolj vpliva število procesnih enot, pomembno pa na to vpliva tudi dolžina čakalne vrste. Med tem, ko hitrost porajanja zehtevkov nima vpliva na to, saj se že vsi paketki izgubijo v MM1. Čas čakanja v čakalni vrsti je pričakovano daljši, če ima paket višjo prioriteto. 
 
 \pagebreak
 \bibliographystyle{plain}

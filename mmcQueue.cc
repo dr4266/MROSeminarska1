@@ -52,6 +52,16 @@ void mmcQueue::initialize()
     job8Signal = registerSignal("job8");
     job9Signal = registerSignal("job9");
     job10Signal = registerSignal("job10");
+    dropped1 = registerSignal("dropped1");
+    dropped2 = registerSignal("dropped2");
+    dropped3 = registerSignal("dropped3");
+    dropped4 = registerSignal("dropped4");
+    dropped5 = registerSignal("dropped5");
+    dropped6 = registerSignal("dropped6");
+    dropped7 = registerSignal("dropped7");
+    dropped8 = registerSignal("dropped8");
+    dropped9 = registerSignal("dropped9");
+    dropped10 = registerSignal("dropped10");
 
 
     this->compareMSG = (CompareFunc) compare;
@@ -154,6 +164,28 @@ void mmcQueue::handleMessage(cMessage *msg)
 	            delete job;
 	            EV << "Brisem sporocilo";
 	            emit(droppedSignal, 1);
+	            switch (job->getSchedulingPriority()) {
+	                case 1:
+	                    emit(dropped1, 1);
+	                case 2:
+	                    emit(dropped2, 1);
+	                case 3:
+	                    emit(dropped3, 1);
+	                case 4:
+	                    emit(dropped4, 1);
+	                case 5:
+	                    emit(dropped5, 1);
+	                case 6:
+	                    emit(dropped6, 1);
+	                case 7:
+	                    emit(dropped7, 1);
+	                case 8:
+	                    emit(dropped8, 1);
+	                case 9:
+	                    emit(dropped9, 1);
+	                case 10:
+	                    emit(dropped10, 1);
+	            }
 	        }
 	        else
 	        {

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=latex 2016.10.20)  30 NOV 2016 16:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=latex 2016.10.20)  6 DEC 2016 20:29
 entering extended mode
 **./porocilo_seminarska1.tex
 (porocilo_seminarska1.tex
@@ -271,7 +271,20 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip44
 )
-(porocilo_seminarska1.aux)
+(porocilo_seminarska1.aux
+
+LaTeX Warning: Label `Slika2' multiply defined.
+
+
+LaTeX Warning: Label `Slika2' multiply defined.
+
+
+LaTeX Warning: Label `Slika2' multiply defined.
+
+
+LaTeX Warning: Label `Slika2' multiply defined.
+
+)
 \openout1 = `porocilo_seminarska1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -288,8 +301,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
-
-(C:\Users\venko\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucsencs.def
+ (C:\Users\venko\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (C:\Users\venko\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
@@ -443,44 +455,96 @@ Package babel Info: Redefining slovene shorthand "|
 (babel)             in language  on input line 112.
 Package babel Info: Redefining slovene shorthand "|
 (babel)             in language  on input line 117.
+
+<queue100.png, id=86, 1193.96063pt x 494.59781pt>
+File: queue100.png Graphic file (type png)
+ <use queue100.png>
+Package pdftex.def Info: queue100.png used on input line 121.
+(pdftex.def)             Requested size: 477.57579pt x 197.8356pt.
+
+Overfull \hbox (24.6079pt too wide) in paragraph at lines 121--122
+ [] 
+ []
+
+<dropped-queue3.png, id=87, 1203.7472pt x 514.17094pt>
+File: dropped-queue3.png Graphic file (type png)
+
+<use dropped-queue3.png>
+Package pdftex.def Info: dropped-queue3.png used on input line 130.
+(pdftex.def)             Requested size: 481.49034pt x 205.66473pt.
+
+Overfull \hbox (28.52245pt too wide) in paragraph at lines 130--131
+ [] 
+ []
+
+<queue3.png, id=88, 1190.94937pt x 503.63156pt>
+File: queue3.png Graphic file (type png)
+ <use queue3.png>
+Package pdftex.def Info: queue3.png used on input line 138.
+(pdftex.def)             Requested size: 476.3713pt x 201.44905pt.
+
+Overfull \hbox (23.40341pt too wide) in paragraph at lines 138--139
+ [] 
+ []
+
+<queueu3-resource5.png, id=89, 1205.2528pt x 517.935pt>
+File: queueu3-resource5.png Graphic file (type png)
+
+<use queueu3-resource5.png>
+Package pdftex.def Info: queueu3-resource5.png used on input line 149.
+(pdftex.def)             Requested size: 482.09259pt x 207.17032pt.
+
+Overfull \hbox (29.1247pt too wide) in paragraph at lines 149--150
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--154
+
+ []
+
 Package babel Info: Redefining slovene shorthand "|
-(babel)             in language  on input line 120.
+(babel)             in language  on input line 154.
+Package babel Info: Redefining slovene shorthand "|
+(babel)             in language  on input line 154.
+[4 <./queue100.png>]
+Package babel Info: Redefining slovene shorthand "|
+(babel)             in language  on input line 156.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 120.
-
-
-LaTeX Warning: Citation `omnetpp' on page 4 undefined on input line 121.
-
-
-LaTeX Warning: Citation `cisco' on page 4 undefined on input line 121.
+(hyperref)                removing `\textasciicaron' on input line 156.
 
 Package babel Info: Redefining slovene shorthand "|
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 160.
 Package babel Info: Redefining slovene shorthand "|
-(babel)             in language  on input line 124.
-[4]
+(babel)             in language  on input line 160.
+[5 <./dropped-queue3.png>]
 No file porocilo_seminarska1.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
-(porocilo_seminarska1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+Package babel Info: Redefining slovene shorthand "|
+(babel)             in language  on input line 163.
+Package babel Info: Redefining slovene shorthand "|
+(babel)             in language  on input line 163.
+[6 <./queue3.png> <./queueu3-resource5.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
+ (porocilo_seminarska1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
 Package rerunfilecheck Info: File `porocilo_seminarska1.out' has not changed.
 (rerunfilecheck)             Checksum: 91253725115FB4D14D3A228F4BFF6956;515.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 8246 strings out of 493335
- 118122 string characters out of 3139277
- 215363 words of memory out of 3000000
- 11660 multiletter control sequences out of 15000+200000
+ 8270 strings out of 493335
+ 118531 string characters out of 3139277
+ 215435 words of memory out of 3000000
+ 11674 multiletter control sequences out of 15000+200000
  8503 words of font info for 30 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,8n,36p,476b,1218s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -491,9 +555,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb>
-Output written on porocilo_seminarska1.pdf (5 pages, 143198 bytes).
+Output written on porocilo_seminarska1.pdf (7 pages, 232679 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 142 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

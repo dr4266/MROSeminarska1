@@ -7,4 +7,4 @@
 \contentsline {subsection}{\numberline {2.3}mm1Queue}{3}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}mmcQueue}{4}{subsection.2.4}
 \contentsline {section}{\numberline {3}Simulacije in rezultati}{4}{section.3}
-\contentsline {section}{\numberline {4}Zaklju\IeC {\v c}ek}{4}{section.4}
+\contentsline {section}{\numberline {4}Zaklju\IeC {\v c}ek}{5}{section.4}
